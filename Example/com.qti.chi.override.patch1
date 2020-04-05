@@ -1,0 +1,5 @@
+FindPattern=7015000010100000
+ReplaceArray=401F000070170000
+ShiftIndex=0
+StartIndex=0
+EveryPattern=true
