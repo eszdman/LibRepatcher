@@ -8,6 +8,12 @@ Example: file - example.bin patch - example.patch0
 
 2.The patch is a text document, there is a sample in the examples folder
 
+3.Use console commands to run patcher
+
+#Console commands
+
+LibRepatcher.jar (example file) (patch count) (patchname)
+
 # All parameters for patch
 
 FindPattern - is needed to find a similar pattern in the data structure
