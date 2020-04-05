@@ -17,7 +17,11 @@ LibRepatcher.jar (example file) (patch count) (patchname)
 # All parameters for patch
 
 FindPattern - is needed to find a similar pattern in the data structure
+
 ReplaceArray - is needed to replace a similar pattern in the data structure
+
 ShiftIndex - offset relative to the desired pattern for ReplaceArray
+
 StartIndex - Starting index for searching for similar data
+
 EveryPattern - Replace specific pattern by ReplaceArray
