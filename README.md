@@ -10,7 +10,7 @@ Example: file - example.bin patch - example.patch0
 
 3.Use console commands to run patcher
 
-#Console commands
+# Console commands
 
 LibRepatcher.jar (example file) (patch count) (patchname)
 
