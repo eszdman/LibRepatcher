@@ -6,6 +6,8 @@ public class Interface {
     int index = 0;
     double find_percentage = 0.8;
     boolean every_pattern = false;
+    int skip_pattern = 0;
+
     File inputFile;
     byte[] fileB;
     String patchBStr;

@@ -13,14 +13,22 @@ public static void ReadPatchParams(Interface inter, File inputPatch){
     }
     inter.findBStr = props.getProperty("FindPattern");
     inter.patchBStr = props.getProperty("ReplaceArray");
-    try {
-        inter.shift = Integer.parseInt(props.getProperty("ShiftIndex"));
-        inter.start_index = Integer.parseInt(props.getProperty("StartIndex"));
-        inter.every_pattern = Boolean.parseBoolean(props.getProperty("EveryPattern"));
-    }catch (Exception e){
-        inter.start_index = 0;
-        inter.shift = 0;
-        inter.every_pattern = false;
-    }
+        String temp;
+        temp=props.getProperty("ShiftIndex");
+        if(temp != null)
+        inter.shift = Integer.parseInt(temp);
+        temp=props.getProperty("StartIndex");
+        if(temp != null)
+            inter.start_index = Integer.parseInt(temp);
+        temp=props.getProperty("EveryPattern");
+        if(temp != null)
+            inter.every_pattern = Boolean.parseBoolean(temp);
+        temp=props.getProperty("FindCoeff");
+        if(temp != null)
+        inter.find_percentage = Double.parseDouble(temp);
+        temp=props.getProperty("SkipPattern");
+        if(temp != null)
+        inter.skip_pattern = Integer.parseInt(temp);
+
 }
 }

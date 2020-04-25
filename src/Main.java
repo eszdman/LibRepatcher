@@ -1,6 +1,5 @@
 import java.io.File;
 import java.nio.file.Files;
-import java.util.regex.Pattern;
 
 public class Main {
     private static String getFileExtension(String fileName) {

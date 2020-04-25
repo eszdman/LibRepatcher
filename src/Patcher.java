@@ -21,18 +21,30 @@ public class Patcher {
         int counter = 0;
         int max_ind = 0;
         int max_counter = 0;
+        int patchcount = 0;
         for(int i = inter.start_index; i<inter.fileB.length; i++){
             for(int j = 0; j<inter.findB.length;j++) {
                if(i+j < inter.fileB.length)
                    if (inter.fileB[i+j] == inter.findB[j]) counter++;
 
             }
-            if(inter.every_pattern &&counter == inter.findB.length) for(int j = 0; j<inter.findB.length; j++) {inter.fileB[i+j] = inter.patchB[j];}
-            if(max_counter<counter) {max_counter = counter;max_ind = i;}
+            if(inter.every_pattern &&counter == inter.findB.length) for(int j = 0; j<inter.findB.length; j++) {
+                if(inter.skip_pattern>0) {inter.skip_pattern--; continue;}
+                inter.fileB[i+j] = inter.patchB[j];
+                patchcount++;
+            }
+            if(max_counter<counter) {
+                max_counter = counter;max_ind = i;
+            }
             counter = 0;
         }
-        System.out.println("Patched, Success:" +100*((double)max_counter/inter.findB.length) +"%");
-        inter.index = max_ind;
+        if(inter.every_pattern) System.out.println("Patch count:"+patchcount);
+        if(!inter.every_pattern)System.out.println("Patched, Success:" +100*((double)max_counter/inter.findB.length) +"%");
+        else {
+            if(((double)(max_counter)/inter.findB.length)>0.99)
+                System.out.println("Patched, Success every pattern"); else
+                    System.out.println("Fail every pattern");}
+                    inter.index = max_ind;
     }
     public static void PathPtr(Interface inter){
         for(int i = 0; i<inter.patchB.length; i++){
