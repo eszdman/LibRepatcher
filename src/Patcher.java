@@ -28,10 +28,16 @@ public class Patcher {
                    if (inter.fileB[i+j] == inter.findB[j]) counter++;
 
             }
-            if(inter.every_pattern &&counter == inter.findB.length) for(int j = 0; j<inter.findB.length; j++) {
-                if(inter.skip_pattern>0) {inter.skip_pattern--; continue;}
-                inter.fileB[i+j] = inter.patchB[j];
+            if(inter.every_pattern &&counter == inter.findB.length) {
                 patchcount++;
+                for (int j = 0; j < inter.findB.length; j++) {
+                    if (inter.skip_pattern > 0) {
+                        inter.skip_pattern--;
+                        continue;
+                    }
+                    inter.fileB[i + j] = inter.patchB[j];
+
+                }
             }
             if(max_counter<counter) {
                 max_counter = counter;max_ind = i;
