@@ -12,8 +12,8 @@ Example: file - example.bin patch - example.patch0
 
 # Console commands
 
-LibRepatcher.jar (example file) (patch count) (patchname)
-Example: LibRepatcher.jar Example.bin 2 examplefix
+java -jar LibRepatcher.jar (example file) (patch count) (patchname)
+Example: java -jar LibRepatcher.jar Example.bin 2 examplefix
 
 # All parameters for patch
 
